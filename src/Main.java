@@ -45,10 +45,12 @@ public class Main {
                     }
                     System.out.println();
                     String name = scanner.nextLine();
+
+                    String nameTo = name.toLowerCase();
                     int n = 0;
                     for (String s : list) {
-                        if (name.equals(s)) {
-                            listBay.add(name);
+                        if (nameTo.equals(s.toLowerCase())) {
+                            listBay.add(name.substring(0,1).toUpperCase()+name.substring(1));
                             System.out.println("Итого в списке покупок: " + listBay.size());
                             //continue;
                         } else {
@@ -100,8 +102,8 @@ public class Main {
 
                         for (int i = 0; i < listBay.size(); i++) {
                             String product = listBay.get(i);
-                            if (remove.equals(product)) {
-                                listBay.remove(remove);
+                            if (remove.toLowerCase().equals(product.toLowerCase())) {
+                                listBay.remove(i);
                                 System.out.println("Покупка " + '"' + product + '"' + " удалена, список покупок:");
 
                             }
